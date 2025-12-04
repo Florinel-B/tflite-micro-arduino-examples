@@ -28,8 +28,6 @@ tar xzf arduino-cli_0.19.3_Linux_64bit.tar.gz
 # curl -L -O "https://github.com/arduino/arduino-cli/releases/download/0.19.3/arduino-cli_0.19.3_MacOS_64bit.tar.gz"
 # tar xzf arduino-cli_0.19.3_MacOS_64bit.tar.gz
 
-/tmp/arduino-cli core update-index
-
 # Add Seeed board manager URL for XIAO nRF52840 support
 /tmp/arduino-cli config init --overwrite
 /tmp/arduino-cli config add board_manager.additional_urls https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
