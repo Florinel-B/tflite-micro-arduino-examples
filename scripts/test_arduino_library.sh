@@ -60,9 +60,14 @@ InstallLibraryDependencies () {
 
 InstallLibraryDependencies
 
+# List of boards to compile for
+BOARDS=("arduino:mbed:nano33ble" "Seeeduino:mbed:xiaonRF52840Sense")
+
 for f in ${ARDUINO_LIBRARIES_DIR}/${LIBRARY_NAME}/examples/*/*.ino; do
-  echo "compiling $(basename ${f} .ino)"
-  ${ARDUINO_CLI_TOOL} compile --build-cache-path ${TEMP_BUILD_DIR} --build-path ${TEMP_BUILD_DIR} --fqbn arduino:mbed:nano33ble $f
+  for board in "${BOARDS[@]}"; do
+    echo "compiling $(basename ${f} .ino) for ${board}"
+    ${ARDUINO_CLI_TOOL} compile --build-cache-path ${TEMP_BUILD_DIR} --build-path ${TEMP_BUILD_DIR} --fqbn ${board} $f
+  done
 done
 
 rm -rf ${ARDUINO_LIBRARIES_DIR}

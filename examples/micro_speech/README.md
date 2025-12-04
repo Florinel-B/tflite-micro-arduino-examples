@@ -27,10 +27,11 @@ The following instructions will help you build and deploy this example to
 The example has been tested with the following devices:
 
 - [Arduino Nano 33 BLE Sense](https://store.arduino.cc/usa/nano-33-ble-sense-with-headers)
+- [Seeed XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html)
 
-The Arduino Nano 33 BLE Sense is currently the only Arduino with a built-in
-microphone. If you're using a different Arduino board and attaching your own
-microphone, you'll need to implement your own `audio_provider.cpp` code. It also has a
+Both the Arduino Nano 33 BLE Sense and Seeed XIAO nRF52840 Sense have built-in
+PDM microphones and RGB LEDs. If you're using a different board and attaching your own
+microphone, you'll need to implement your own `audio_provider.cpp` code. The boards also have a
 set of LEDs, which are used to indicate that a word has been recognized.
 
 ### Install the Arduino_TensorFlowLite library
